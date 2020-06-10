@@ -1,5 +1,7 @@
 <template>
-	<div></div>
+	<div class="w-full text-white">
+		<p>BubbleSort</p>
+	</div>
 </template>
 
 <script lang="ts">
