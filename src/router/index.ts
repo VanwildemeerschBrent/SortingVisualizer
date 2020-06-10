@@ -22,9 +22,9 @@ const routes: Array<RouteConfig> = [
     component: () => import(/* webpackChunkName: "sort_selection" */ "../views/SelectionSort.vue"),
   },
   {
-    path: "/cycle-sort",
-    name: "CycleSort",
-    component: () => import(/* webpackChunkName: "sort_cycle" */ "../views/CycleSort.vue"),
+    path: "/insertion-sort",
+    name: "InsertionSort",
+    component: () => import(/* webpackChunkName: "sort_insertion" */ "../views/InsertionSort.vue"),
   },
   {
     path: "/merge-sort",
@@ -32,9 +32,9 @@ const routes: Array<RouteConfig> = [
     component: () => import(/* webpackChunkName: "sort_merge" */ "../views/MergeSort.vue"),
   },
   {
-    path: "/bogo-sort",
-    name: "Bogosort",
-    component: () => import(/* webpackChunkName: "sort_merge" */ "../views/BogoSort.vue"),
+    path: "/quick-sort",
+    name: "QuickSort",
+    component: () => import(/* webpackChunkName: "sort_quick" */ "../views/QuickSort.vue"),
   },
 ];
 
