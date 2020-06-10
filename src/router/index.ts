@@ -1,29 +1,47 @@
-import Vue from 'vue'
-import VueRouter, { RouteConfig } from 'vue-router'
-import Home from '../views/Home.vue'
+import Vue from "vue";
+import VueRouter, { RouteConfig } from "vue-router";
+import Home from "../views/Home.vue";
 
-Vue.use(VueRouter)
+Vue.use(VueRouter);
 
-  const routes: Array<RouteConfig> = [
+const routes: Array<RouteConfig> = [
   {
-    path: '/',
-    name: 'Home',
-    component: Home
+    path: "/",
+    name: "Home",
+    component: Home,
   },
   {
-    path: '/about',
-    name: 'About',
-    // route level code-splitting
-    // this generates a separate chunk (about.[hash].js) for this route
-    // which is lazy-loaded when the route is visited.
-    component: () => import(/* webpackChunkName: "about" */ '../views/About.vue')
-  }
-]
+    alias: "/",
+    path: "/bubble-sort",
+    name: "BubbleSort",
+    component: () => import(/* webpackChunkName: "sort_bubble" */ "../views/BubbleSort.vue"),
+  },
+  {
+    path: "/selection-sort",
+    name: "SelectionSort",
+    component: () => import(/* webpackChunkName: "sort_selection" */ "../views/SelectionSort.vue"),
+  },
+  {
+    path: "/cycle-sort",
+    name: "CycleSort",
+    component: () => import(/* webpackChunkName: "sort_cycle" */ "../views/CycleSort.vue"),
+  },
+  {
+    path: "/merge-sort",
+    name: "MergeSort",
+    component: () => import(/* webpackChunkName: "sort_merge" */ "../views/MergeSort.vue"),
+  },
+  {
+    path: "/bogo-sort",
+    name: "Bogosort",
+    component: () => import(/* webpackChunkName: "sort_merge" */ "../views/BogoSort.vue"),
+  },
+];
 
 const router = new VueRouter({
-  mode: 'history',
+  mode: "history",
   base: process.env.BASE_URL,
-  routes
-})
+  routes,
+});
 
-export default router
+export default router;
