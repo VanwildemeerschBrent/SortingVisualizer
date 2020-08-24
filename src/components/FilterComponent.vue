@@ -23,9 +23,9 @@
 					class="h-3 overflow-hidden bg-gray-400 rounded-lg appearance-none w-128"
 					type="range"
 					min="1"
-					max="100"
-					step="1"
-					value="15"
+					max="1000"
+					step="10"
+					v-model.number="sortSpeed"
 				/>
 			</div>
 		</div>
@@ -39,20 +39,25 @@
 		name: "FilterComponent",
 
 		props: {
-			arraySize: { required: true, type: Number, default: 10 }
+			arraySize: { required: true, type: Number, default: 10 },
+			sortingSpeed: { required: true, type: Number, default: 500 },
 		},
 
 		data() {
 			return {
-				sizeOfArray: this.arraySize
+				sizeOfArray: this.arraySize,
+				sortSpeed: this.sortingSpeed,
 			};
 		},
 
 		watch: {
 			sizeOfArray() {
 				this.$emit("update:arraySize", this.sizeOfArray);
-			}
-		}
+			},
+			sortSpeed() {
+				this.$emit("update:sortingSpeed", this.sortSpeed);
+			},
+		},
 	});
 </script>
 
