@@ -1,9 +1,9 @@
 <template>
 	<div class="w-auto text-white">
 		<div class="text-xl text-center">
-			<button class="p-4 hover:bg-green-800">Retry</button>
+			<button class="p-4 hover:bg-green-800" @click="$emit('onClickResetSorting')">Retry</button>
 			<button class="p-4 hover:bg-green-800" @click="$emit('onClickStartSorting')">Play</button>
-			<button class="p-4 hover:bg-green-800">Stop</button>
+			<button class="p-4 hover:bg-green-800" @click="$emit('onClickStopSorting')">Stop</button>
 		</div>
 		<div class="text-lg text-center">
 			<div class="inline-block p-2">

@@ -14,6 +14,8 @@
 			:arraySize.sync="arraySize"
 			:sortingSpeed.sync="sortingSpeed"
 			@onClickStartSorting="onClickStartBubbleSort"
+			@onClickStopSorting="onClickStopSorting"
+			@onClickResetSorting="onClickResetSorting"
 		/>
 	</div>
 </template>
@@ -80,17 +82,24 @@
 				}
 			},
 
-			async shuffle(a) {
+			onClickStopSorting() {
+				console.warn("Stop sort");
+			},
+
+			onClickResetSorting() {
+				this.shuffle(this.arrItems);
+			},
+
+			shuffle(a) {
 				let j, i;
 				for (i = a.length - 1; i > 0; i--) {
 					j = Math.floor(Math.random() * (i + 1));
 					this.arraySwap(a, i, j);
-					await this.sleep();
 				}
 			},
 
 			sleep() {
-				return new Promise((resolve) => setTimeout(resolve, 200));
+				return new Promise((resolve) => setTimeout(resolve, this.sortingSpeed));
 			},
 
 			arraySetWithoutIndexes(array, index, value) {
