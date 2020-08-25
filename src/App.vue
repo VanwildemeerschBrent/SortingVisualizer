@@ -107,6 +107,9 @@
 			arraySize() {
 				this.setArrayItems();
 			},
+			$route() {
+				this.shuffle(this.arrItems);
+			},
 		},
 
 		methods: {
