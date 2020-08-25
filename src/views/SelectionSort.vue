@@ -74,7 +74,9 @@
 				return `height:${heightOfElement}px`;
 			},
 
-			async onClickStartSort() {},
+			async onClickStartSort() {
+				console.warn('Bubble sort')
+			},
 
 			onClickStopSorting() {
 				console.warn("Stop sort");

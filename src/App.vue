@@ -27,9 +27,158 @@
 				:class="{'opacity-100':$route.fullPath==='/quick-sort'}"
 			>Quick Sort</router-link>
 		</div>
-		<router-view />
+
+		<div class="w-full text-white">
+			<p class="p-4 text-5xl text-center">{{sortTitle.find(x=>x.path===$route.path).title}}</p>
+			<div class="flex inline-block w-full h-auto p-4 sorting_container" v-if="arrItems">
+				<div
+					class="flex-1 float-left bg-green-500 position-relative"
+					v-for="item in arrItems"
+					:key="item.id"
+					:style="item.style"
+				></div>
+			</div>
+			<FilterComponent
+				class="fixed bottom-0 w-screen h-auto bg-green-500"
+				:arraySize.sync="arraySize"
+				:sortingSpeed.sync="sortingSpeed"
+				@onClickStartSorting="sortTitle.find(x=>x.path===$route.path).fn()"
+				@onClickStopSorting="onClickStopSort"
+				@onClickResetSorting="onClickResetSort"
+			/>
+		</div>
 	</div>
 </template>
+<script>
+	import Vue from "vue";
+	import FilterComponent from "./components/FilterComponent.vue";
+	import sortMixin from "./mixins/sortMixin";
+
+	export default Vue.extend({
+		name: "App",
+
+		components: {
+			FilterComponent,
+		},
+
+		mixins: [sortMixin],
+
+		data() {
+			return {
+				arraySize: 10,
+				arrItems: [],
+				sortingSpeed: 200,
+
+				sortTitle: [
+					{
+						path: "/bubble-sort",
+						title: "Bubble Sort Algorithm",
+						fn: this.bubbleSort,
+					},
+					{
+						path: "/selection-sort",
+						title: "Selection Sort Algorithm",
+						fn: this.selectionSort,
+					},
+					{
+						path: "/insertion-sort",
+						title: "Insertion Sort Algorithm",
+						fn: this.insertionSort,
+					},
+					{
+						path: "/merge-sort",
+						title: "Merge Sort Algorithm",
+						fn: this.mergeSort,
+					},
+					{
+						path: "/quick-sort",
+						title: "Quick Sort Algorithm",
+						fn: this.quickSort,
+					},
+				],
+			};
+		},
+
+		mounted() {
+			this.setArrayItems();
+		},
+
+		watch: {
+			arraySize() {
+				this.setArrayItems();
+			},
+		},
+
+		methods: {
+			setArrayItems() {
+				this.arrItems = [];
+				for (let i = 1; i <= this.arraySize; i++) {
+					const randomNumber = Math.round(
+						Math.random() * (this.arraySize - 1) + 1
+					);
+
+					this.arrItems.push({
+						id: i,
+						value: randomNumber,
+						style: this.getHeightForArrayItem(randomNumber),
+					});
+				}
+			},
+
+			getHeightForArrayItem(item) {
+				const heightOfElement =
+					window.innerHeight * 0.6 * (item / this.arraySize);
+				return `height:${heightOfElement}px`;
+			},
+
+			onClickStopSort() {
+				console.warn("Stop sort");
+			},
+
+			onClickResetSort() {
+				this.shuffle(this.arrItems);
+			},
+
+			async bubbleSort() {
+				for (let i = 0; i < this.arraySize; i++) {
+					for (let j = 0; j < this.arraySize - 1 - i; j++) {
+						if (this.arrItems[j].value > this.arrItems[j + 1].value) {
+							this.arraySwap(this.arrItems, j, j + 1);
+							await this.sleep();
+						}
+					}
+				}
+			},
+
+			async selectionSort() {
+				console.warn("SelectionSort");
+			},
+
+			async insertionSort() {
+				for (let i = 0; i < this.arraySize; i++) {
+					const key = this.arrItems[i];
+					let j = i - 1;
+
+					while (j >= 0 && this.arrItems[j].value > key.value) {
+						this.arraySwap(this.arrItems, j, j + 1);
+						j = j - 1;
+						await this.sleep();
+					}
+
+					this.arrItems[j + 1] = key;
+				}
+			},
+
+			async mergeSort() {
+				console.warn("Merge sort");
+			},
+
+			async quickSort() {
+				console.warn("Quick sort");
+			},
+		},
+	});
+</script>
 
 
 <style lang="scss">

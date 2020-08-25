@@ -11,30 +11,25 @@ const routes: Array<RouteConfig> = [
     component: Home,
   },
   {
-    alias: "/",
     path: "/bubble-sort",
     name: "BubbleSort",
-    component: () => import(/* webpackChunkName: "sort_bubble" */ "../views/BubbleSort.vue"),
+    alias: "/",
   },
   {
     path: "/selection-sort",
     name: "SelectionSort",
-    component: () => import(/* webpackChunkName: "sort_selection" */ "../views/SelectionSort.vue"),
   },
   {
     path: "/insertion-sort",
     name: "InsertionSort",
-    component: () => import(/* webpackChunkName: "sort_insertion" */ "../views/InsertionSort.vue"),
   },
   {
     path: "/merge-sort",
     name: "MergeSort",
-    component: () => import(/* webpackChunkName: "sort_merge" */ "../views/MergeSort.vue"),
   },
   {
     path: "/quick-sort",
     name: "QuickSort",
-    component: () => import(/* webpackChunkName: "sort_quick" */ "../views/QuickSort.vue"),
   },
 ];
 
