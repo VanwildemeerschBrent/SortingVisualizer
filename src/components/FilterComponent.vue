@@ -1,7 +1,7 @@
 <template>
 	<div class="w-auto text-white">
 		<div class="text-xl text-center">
-			<button class="p-4 hover:bg-green-800" @click="$emit('onClickResetSorting')">Retry</button>
+			<button class="p-4 hover:bg-green-800" @click="$emit('onClickResetSorting')">Reshuffle</button>
 			<button class="p-4 hover:bg-green-800" @click="$emit('onClickStartSorting')">Play</button>
 			<button class="p-4 hover:bg-green-800" @click="$emit('onClickStopSorting')">Stop</button>
 		</div>
@@ -23,8 +23,8 @@
 					class="h-3 overflow-hidden bg-gray-400 rounded-lg appearance-none w-128"
 					type="range"
 					min="1"
-					max="1000"
-					step="10"
+					max="500"
+					step="5"
 					v-model.number="sortSpeed"
 				/>
 			</div>

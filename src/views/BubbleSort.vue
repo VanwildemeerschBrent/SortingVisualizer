@@ -23,6 +23,7 @@
 <script >
 	import Vue from "vue";
 	import FilterComponent from "../components/FilterComponent.vue";
+	import sortMixin from "../mixins/sortMixin";
 
 	export default Vue.extend({
 		name: "BubbleSort",
@@ -31,11 +32,13 @@
 			FilterComponent,
 		},
 
+		mixins: [sortMixin],
+
 		data() {
 			return {
 				arraySize: 10,
 				arrItems: [],
-				sortingSpeed: 500,
+				sortingSpeed: 200,
 			};
 		},
 
@@ -89,31 +92,22 @@
 			onClickResetSorting() {
 				this.shuffle(this.arrItems);
 			},
-
-			shuffle(a) {
-				let j, i;
-				for (i = a.length - 1; i > 0; i--) {
-					j = Math.floor(Math.random() * (i + 1));
-					this.arraySwap(a, i, j);
-				}
-			},
-
-			sleep() {
-				return new Promise((resolve) => setTimeout(resolve, this.sortingSpeed));
-			},
-
-			arraySetWithoutIndexes(array, index, value) {
-				array.splice(index, 1, value);
-			},
-
-			arraySwap(array, indexA, indexB) {
-				const x = array[indexA];
-				this.arraySetWithoutIndexes(array, indexA, array[indexB]);
-				this.arraySetWithoutIndexes(array, indexB, x);
-			},
 		},
 	});
 </script>
 
 <style scoped>
+	.list-animation-item {
+		transition: all ease 0.5s;
+	}
+
+	.fade-enter-active,
+	.fade-leave-active {
+		transition: all ease 1s;
+	}
+
+	.fade-enter, .fade-leave-to /* .fade-leave-active below version 2.1.8 */ {
+		opacity: 0;
+		transform: translateY(-30px) scale(0.9);
+	}
 </style>
