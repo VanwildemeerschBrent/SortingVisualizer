@@ -9,7 +9,7 @@ export default {
     },
 
     sleep() {
-      return new Promise((resolve) => setTimeout(resolve, this.sortingSpeed));
+      return new Promise((resolve) => setTimeout(resolve, 1000 / this.sortingSpeed));
     },
 
     arraySetWithoutIndexes(array, index, value) {

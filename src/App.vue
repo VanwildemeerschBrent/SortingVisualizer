@@ -32,7 +32,7 @@
 			<p class="p-4 text-5xl text-center">{{sortTitle.find(x=>x.path===$route.path).title}}</p>
 			<div class="flex inline-block w-full h-auto p-4 sorting_container" v-if="arrItems">
 				<div
-					class="flex-1 float-left bg-green-500 position-relative"
+					class="flex-1 float-left mx-1 bg-green-500 position-relative"
 					v-for="item in arrItems"
 					:key="item.id"
 					:style="item.style"
@@ -65,7 +65,7 @@
 
 		data() {
 			return {
-				arraySize: 10,
+				arraySize: 50,
 				arrItems: [],
 				sortingSpeed: 200,
 
