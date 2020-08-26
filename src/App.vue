@@ -129,7 +129,7 @@
 
 			getHeightForArrayItem(item) {
 				const heightOfElement =
-					window.innerHeight * 0.6 * (item / this.arraySize);
+					window.innerHeight * 0.58 * (item / this.arraySize);
 				return `height:${heightOfElement}px`;
 			},
 

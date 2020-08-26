@@ -1,8 +1,20 @@
 <template>
 	<div class="w-auto text-white">
-		<div class="text-xl text-center">
-			<button class="p-4 hover:bg-green-800" @click="$emit('onClickResetSorting')">Reshuffle</button>
-			<button class="p-4 hover:bg-green-800" @click="$emit('onClickStartSorting')">Play</button>
+		<div class="w-screen mt-2 text-xl text-center">
+			<button
+				class="px-4 py-2 mx-1 font-semibold text-white bg-transparent border border-white rounded focus:outline-none hover:bg-green-800 hover:text-white hover:border-transparent"
+				@click="$emit('onClickResetSorting')"
+			>
+				<img class="relative float-left mt-1 icon" src="../assets/icon-shuffle.svg" />
+				<span class="relative float-right">Reshuffle</span>
+			</button>
+			<button
+				class="px-4 py-2 mx-1 font-semibold text-white bg-transparent border border-white rounded focus:outline-none hover:bg-green-800 hover:text-white hover:border-transparent"
+				@click="$emit('onClickStartSorting')"
+			>
+				<img class="relative float-left mt-1 icon" src="../assets/icon-play.svg" />
+				<span class="relative float-right">Play</span>
+			</button>
 		</div>
 		<div class="text-lg text-center">
 			<div class="inline-block p-2">
@@ -59,6 +71,3 @@
 		},
 	});
 </script>
-
-<style scoped>
-</style>
