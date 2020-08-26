@@ -43,7 +43,6 @@
 				:arraySize.sync="arraySize"
 				:sortingSpeed.sync="sortingSpeed"
 				@onClickStartSorting="sortTitle.find(x=>x.path===$route.path).fn()"
-				@onClickStopSorting="onClickStopSort"
 				@onClickResetSorting="onClickResetSort"
 			/>
 		</div>
@@ -132,10 +131,6 @@
 				const heightOfElement =
 					window.innerHeight * 0.6 * (item / this.arraySize);
 				return `height:${heightOfElement}px`;
-			},
-
-			onClickStopSort() {
-				console.warn("Stop sort");
 			},
 
 			onClickResetSort() {
