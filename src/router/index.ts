@@ -31,6 +31,7 @@ const routes: Array<RouteConfig> = [
     path: "/quick-sort",
     name: "QuickSort",
   },
+
 ];
 
 const router = new VueRouter({
