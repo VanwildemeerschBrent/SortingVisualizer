@@ -219,24 +219,31 @@
 			},
 
 			quickSort() {
-				if (this.arrItems.length < 2) return;
+				this.arrItems = this.runQuickSort(
+					JSON.parse(JSON.stringify(this.arrItems))
+				);
+			},
 
-				const pivot = this.arrItems[0];
-				const lesserArray = [];
-				const greaterArray = [];
+			runQuickSort(input) {
+				if (input.length <= 1) return input;
 
-				for (let i = 1; i < this.arrItems.length; i++) {
-					if (this.arrItems[i] > pivot) {
-						greaterArray.push(this.arrItems[i]);
+				const pivot = input[input.length - 1];
+				const leftArr = [];
+				const rightArr = [];
+
+				for (const el of input.slice(0, input.length - 1)) {
+					if (el.value < pivot.value) {
+						leftArr.push(el);
 					} else {
-						lesserArray.push(this.arrItems[i]);
+						rightArr.push(el);
 					}
 				}
 
-				this.arrItems = this.quickSort(lesserArray).concat(
+				return [
+					...this.runQuickSort(leftArr),
 					pivot,
-					this.quickSort(greaterArray)
-				);
+					...this.runQuickSort(rightArr),
+				];
 			},
 		},
 	});
