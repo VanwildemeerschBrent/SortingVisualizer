@@ -8,28 +8,46 @@ const routes: Array<RouteConfig> = [
   {
     path: "/",
     name: "Home",
+    meta:{
+      title:'JS Sorting Algorithms || BubbleSort'
+    },
     component: Home,
   },
   {
     path: "/bubble-sort",
     name: "BubbleSort",
+    meta:{
+      title:'JS Sorting Algorithms || BubbleSort'
+    },
     alias: "/",
   },
   {
     path: "/selection-sort",
     name: "SelectionSort",
+    meta:{
+      title:'JS Sorting Algorithms || SelectionSort'
+    },
   },
   {
     path: "/insertion-sort",
     name: "InsertionSort",
+    meta:{
+      title:'JS Sorting Algorithms || InsertionSort'
+    },
   },
   {
     path: "/merge-sort",
     name: "MergeSort",
+    meta:{
+      title:'JS Sorting Algorithms || MergeSort'
+    },
   },
   {
     path: "/quick-sort",
     name: "QuickSort",
+    meta:{
+      title:'JS Sorting Algorithms || QuickSort'
+    },
   },
 
 ];

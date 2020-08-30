@@ -100,14 +100,16 @@
 
 		mounted() {
 			this.setArrayItems();
+			document.title = this.$route.meta.title;
 		},
 
 		watch: {
 			arraySize() {
 				this.setArrayItems();
 			},
-			$route() {
+			$route(to, from) {
 				this.shuffle(this.arrItems);
+				document.title = to.meta.title;
 			},
 		},
 
