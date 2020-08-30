@@ -20,8 +20,8 @@
 				class="flex-1 p-4 bg-green-500 border-r border-gray-700 opacity-75 text-bg-gray-700 hover:opacity-100"
 				to="/merge-sort"
 				:class="{'opacity-100':$route.fullPath==='/merge-sort'}"
-			>MergeSort</router-link>
-			<router-link
+			>MergeSort</router-link> -->
+			<!--<router-link
 				class="flex-1 p-4 bg-green-500 border-r border-gray-700 opacity-75 text-bg-gray-700 hover:opacity-100"
 				to="/quick-sort"
 				:class="{'opacity-100':$route.fullPath==='/quick-sort'}"
@@ -178,7 +178,40 @@
 			},
 
 			async mergeSort() {
-				console.warn("Merge sort");
+				if (this.arrItems.length <= 1) return;
+
+				// divide Array in half, figure out middle
+				const middle = Math.floor(this.arrItems.length / 2);
+				// divide array into left and right
+				const left = this.arrItems.slice(0, middle);
+				const right = this.arrItems.slice(middle);
+
+				console.warn("left", left);
+				console.warn("right", right);
+
+				// return this.merge(this.mergeSort(left), this.mergeSort(right));
+			},
+
+			merge(left, right) {
+				const resultArray = [];
+				let leftIndex = 0;
+				let rightIndex = 0;
+
+				
+
+				while (leftIndex < left.length && rightIndex < right.length) {
+					if (left[leftIndex] < right[rightIndex]) {
+						resultArray.push(left[leftIndex]);
+						leftIndex++;
+					} else {
+						resultArray.push(right[rightIndex]);
+						rightIndex++;
+					}
+				}
+
+				return resultArray
+					.concat(left.slice(leftIndex))
+					.concat(right.slice(rightIndex));
 			},
 
 			async quickSort() {
