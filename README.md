@@ -8,7 +8,7 @@ Project is build and deployed on [Netlify](www.netlify.com)
 
 ## Installation
 
-Use the package manager [npm](https://nodejs.org/en/) to install foobar.
+Use the package manager [npm](https://nodejs.org/en/) to install.
 
 ```bash
 npm install
