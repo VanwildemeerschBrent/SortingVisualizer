@@ -1,34 +1,41 @@
-# sortingvisualizer
+# Javascript Sorting Algorithm Visualizer
+[![Netlify Status](https://api.netlify.com/api/v1/badges/3b25d530-4a97-4fdd-b1a1-64e85c718bdb/deploy-status)](https://app.netlify.com/sites/vanwildemeerschbrent-js-sorting-algorithms/deploys)
 
-## Project setup
-```
-yarn install
-```
+Javascript Sorting Algorithm Visualizer is a VueJS project build to 
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
 
-### Compiles and minifies for production
-```
-yarn build
+## Installation
+
+Use the package manager [npm](https://nodejs.org/en/) to install foobar.
+
+```bash
+npm install
 ```
 
-### Run your unit tests
-```
-yarn test:unit
+## Usage
+
+Starting development server
+```bash
+npm run serve
 ```
 
-### Run your end-to-end tests
-```
-yarn test:e2e
-```
-
-### Lints and fixes files
-```
-yarn lint
+Building project
+```bash
+npm run build
 ```
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## JS Sorting Algorithms
+
+### Bubble Sort
+### Selection Sort
+### Insertion Sort
+### Merge Sort
+### Quick Sort
+
+## Contributing
+Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
+
+Please make sure to update tests as appropriate.
+
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
