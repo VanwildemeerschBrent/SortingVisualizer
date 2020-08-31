@@ -1,7 +1,9 @@
 # Javascript Sorting Algorithm Visualizer
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3b25d530-4a97-4fdd-b1a1-64e85c718bdb/deploy-status)](https://app.netlify.com/sites/vanwildemeerschbrent-js-sorting-algorithms/deploys)
 
-Javascript Sorting Algorithm Visualizer is a VueJS project build to 
+This is a VueJS project build to visualize the different available sorting algorithms to give me more knowledge about the different methods of sorting and more information on which sorting algorithm to use in different circumstances.
+
+Project is build and deployed on [Netlify](www.netlify.com)
 
 
 ## Installation
@@ -27,10 +29,20 @@ npm run build
 ## JS Sorting Algorithms
 
 ### Bubble Sort
+[Bubble Sort Algorithm](https://en.wikipedia.org/wiki/Bubble_sort)
+
+
 ### Selection Sort
+[Selection Sort Algorithm](https://en.wikipedia.org/wiki/Selection_sort)
+
 ### Insertion Sort
+[Insertion Sort Algorithm](https://en.wikipedia.org/wiki/Insertion_sort)
+
 ### Merge Sort
+[Merge Sort Algorithm](https://en.wikipedia.org/wiki/Merge_sort)
+
 ### Quick Sort
+[Quick Sort Algorithm](https://en.wikipedia.org/wiki/Quicksort)
 
 ## Contributing
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
