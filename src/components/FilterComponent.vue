@@ -39,6 +39,10 @@
 					v-model.number="sortSpeed"
 				/>
 			</div>
+
+			<a class href="https://github.com/VanwildemeerschBrent/SortingVisualizer" target="_blank">
+				<img class="absolute bottom-0 right-0 p-3" src="../assets/github-icon.png" />
+			</a>
 		</div>
 	</div>
 </template>

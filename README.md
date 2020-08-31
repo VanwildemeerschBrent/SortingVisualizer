@@ -1,10 +1,10 @@
 # Javascript Sorting Algorithm Visualizer
+
 [![Netlify Status](https://api.netlify.com/api/v1/badges/3b25d530-4a97-4fdd-b1a1-64e85c718bdb/deploy-status)](https://app.netlify.com/sites/vanwildemeerschbrent-js-sorting-algorithms/deploys)
 
 This is a VueJS project build to visualize the different available sorting algorithms to give me more knowledge about the different methods of sorting and more information on which sorting algorithm to use in different circumstances.
 
 Project is build and deployed on [Netlify](www.netlify.com)
-
 
 ## Installation
 
@@ -17,37 +17,45 @@ npm install
 ## Usage
 
 Starting development server
+
 ```bash
 npm run serve
 ```
 
 Building project
+
 ```bash
 npm run build
 ```
 
 ## JS Sorting Algorithms
 
-### Bubble Sort
-[Bubble Sort Algorithm](https://en.wikipedia.org/wiki/Bubble_sort)
+### Bubble Sort Algorithm
 
+[Bubble Sort](https://en.wikipedia.org/wiki/Bubble_sort)
 
-### Selection Sort
-[Selection Sort Algorithm](https://en.wikipedia.org/wiki/Selection_sort)
+### Selection Sort Algorithm
 
-### Insertion Sort
-[Insertion Sort Algorithm](https://en.wikipedia.org/wiki/Insertion_sort)
+[Selection Sort](https://en.wikipedia.org/wiki/Selection_sort)
 
-### Merge Sort
-[Merge Sort Algorithm](https://en.wikipedia.org/wiki/Merge_sort)
+### Insertion Sort Algorithm
 
-### Quick Sort
-[Quick Sort Algorithm](https://en.wikipedia.org/wiki/Quicksort)
+[Insertion Sort](https://en.wikipedia.org/wiki/Insertion_sort)
+
+### Merge Sort Algorithm
+
+[Merge Sort](https://en.wikipedia.org/wiki/Merge_sort)
+
+### Quick Sort Algorithm
+
+[Quick Sort](https://en.wikipedia.org/wiki/Quicksort)
 
 ## Contributing
+
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
 Please make sure to update tests as appropriate.
 
 ## License
+
 [MIT](https://choosealicense.com/licenses/mit/)
